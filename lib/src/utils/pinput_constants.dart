@@ -23,14 +23,16 @@ class PinputConstants {
   static const _defaultPinFillColor = Color.fromRGBO(222, 231, 240, .57);
   static const _defaultPinputDecoration = ShapeDecoration(
     color: _defaultPinFillColor,
-    borderRadius: BorderRadius.all(Radius.circular(8)),
+    shape: RoundedSuperellipseBorder(
+      borderRadius: BorderRadius.all(Radius.circular(8)),
+    ),
   );
 
   /// The default value [Pinput.defaultPinTheme]
   static const _defaultPinTheme = PinTheme(
     width: 56,
     height: 60,
-    textStyle: TextStyle(),
+    textStyle: const TextStyle(),
     decoration: _defaultPinputDecoration,
   );
 }

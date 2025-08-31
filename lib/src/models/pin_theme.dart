@@ -21,29 +21,11 @@ class PinTheme {
   final EdgeInsetsGeometry? padding;
 
   /// Additional constraints to apply to the each field container.
-  /// properties
-  /// ```dart
-  ///  this.minWidth = 0.0,
-  ///  this.maxWidth = double.infinity,
-  ///  this.minHeight = 0.0,
-  ///  this.maxHeight = double.infinity,
-  ///  ```
   final BoxConstraints? constraints;
 
-  ///  Box decoration of following properties of Pin item
-  ///  You can customize every pixel with it
-  ///  properties are being animated implicitly when value changes
-  ///  ```dart
-  ///  this.color,
-  ///  this.image,
-  ///  this.border,
-  ///  this.borderRadius,
-  ///  this.boxShadow,
-  ///  this.gradient,
-  ///  this.backgroundBlendMode,
-  ///  this.shape = BoxShape.rectangle,
-  ///  ```
-  /// The decoration of each [Pinput] submitted field
+  /// ShapeDecoration for custom shapes like RoundedSuperellipseBorder
+  /// You can customize every pixel with it
+  /// Properties are being animated implicitly when value changes
   final ShapeDecoration? decoration;
 
   /// Theme of the individual pin items for following states:
@@ -92,37 +74,97 @@ class PinTheme {
     );
   }
 
-  /// Create a new [PinTheme] from the current instance with new decoration
+  /// Helper method to create a new ShapeDecoration since it doesn't have copyWith
+  ShapeDecoration _createShapeDecoration({
+    Color? color,
+    DecorationImage? image,
+    Gradient? gradient,
+    List<BoxShadow>? shadows,
+    ShapeBorder? shape,
+  }) {
+    return ShapeDecoration(
+      color: color ?? decoration?.color,
+      image: image ?? decoration?.image,
+      gradient: gradient ?? decoration?.gradient,
+      shadows: shadows ?? decoration?.shadows,
+      shape: shape ?? decoration?.shape ?? RoundedSuperellipseBorder(borderRadius: BorderRadius.circular(0)),
+    );
+  }
+
+  /// Create a new [PinTheme] from the current instance with new decoration properties
   PinTheme copyDecorationWith({
     Color? color,
     DecorationImage? image,
-    BoxBorder? border,
-    BorderRadiusGeometry? borderRadius,
-    List<BoxShadow>? boxShadow,
     Gradient? gradient,
-    BlendMode? backgroundBlendMode,
-    BoxShape? shape,
+    List<BoxShadow>? shadows,
+    ShapeBorder? shape,
   }) {
-    assert(decoration != null);
     return copyWith(
-      decoration: decoration?.copyWith(
+      decoration: _createShapeDecoration(
         color: color,
         image: image,
-        border: border,
-        borderRadius: borderRadius,
-        boxShadow: boxShadow,
         gradient: gradient,
-        backgroundBlendMode: backgroundBlendMode,
+        shadows: shadows,
         shape: shape,
       ),
     );
   }
 
-  /// Create a new [PinTheme] from the current instance with new border
-  PinTheme copyBorderWith({required Border border}) {
-    assert(decoration != null);
-    return copyWith(
-      decoration: decoration?.copyWith(border: border),
+  /// Create a new [PinTheme] with RoundedSuperellipseBorder
+  PinTheme copyBorderWith({
+    BorderSide? side,
+    BorderRadiusGeometry? borderRadius,
+  }) {
+    final currentShape = decoration?.shape;
+    ShapeBorder newShape;
+
+    if (currentShape is RoundedSuperellipseBorder) {
+      // Use the copyWith method of RoundedSuperellipseBorder
+      newShape = currentShape.copyWith(
+        side: side,
+        borderRadius: borderRadius,
+      );
+    } else {
+      // Create new RoundedSuperellipseBorder with safe defaults
+      newShape = RoundedSuperellipseBorder(
+        side: side ?? BorderSide.none,
+        borderRadius: borderRadius ?? BorderRadius.circular(0),
+      );
+    }
+
+    return copyDecorationWith(shape: newShape);
+  }
+
+  /// Convenience method to create PinTheme with RoundedSuperellipseBorder
+  static PinTheme withSuperellipse({
+    double? width,
+    double? height,
+    Color? color,
+    BorderSide? side,
+    BorderRadiusGeometry? borderRadius,
+    TextStyle? textStyle,
+    EdgeInsetsGeometry? margin,
+    EdgeInsetsGeometry? padding,
+    BoxConstraints? constraints,
+    Gradient? gradient,
+    List<BoxShadow>? shadows,
+  }) {
+    return PinTheme(
+      width: width,
+      height: height,
+      textStyle: textStyle,
+      margin: margin,
+      padding: padding,
+      constraints: constraints,
+      decoration: ShapeDecoration(
+        color: color,
+        gradient: gradient,
+        shadows: shadows,
+        shape: RoundedSuperellipseBorder(
+          side: side ?? BorderSide.none,
+          borderRadius: borderRadius ?? BorderRadius.circular(0),
+        ),
+      ),
     );
   }
 }

@@ -97,7 +97,7 @@ class GalleryPageState extends State<GalleryPage>
 
           return Scaffold(
             body: Container(
-              decoration: BoxDecoration(
+              decoration: ShapeDecoration(
                 gradient: LinearGradient(
                   begin: Alignment.topLeft,
                   end: Alignment.bottomRight,

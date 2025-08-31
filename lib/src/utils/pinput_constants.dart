@@ -21,7 +21,7 @@ class PinputConstants {
 
   ///
   static const _defaultPinFillColor = Color.fromRGBO(222, 231, 240, .57);
-  static const _defaultPinputDecoration = BoxDecoration(
+  static const _defaultPinputDecoration = ShapeDecoration(
     color: _defaultPinFillColor,
     borderRadius: BorderRadius.all(Radius.circular(8)),
   );

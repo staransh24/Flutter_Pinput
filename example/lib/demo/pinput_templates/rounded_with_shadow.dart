@@ -32,7 +32,7 @@ class _RoundedWithShadowState extends State<RoundedWithShadow> {
         fontSize: 20,
         color: const Color.fromRGBO(70, 69, 66, 1),
       ),
-      decoration: BoxDecoration(
+      decoration: ShapeDecoration(
         color: const Color.fromRGBO(232, 235, 241, 0.37),
         borderRadius: BorderRadius.circular(24),
       ),
@@ -44,7 +44,7 @@ class _RoundedWithShadowState extends State<RoundedWithShadow> {
         width: 21,
         height: 1,
         margin: const EdgeInsets.only(bottom: 12),
-        decoration: BoxDecoration(
+        decoration: ShapeDecoration(
           color: const Color.fromRGBO(137, 146, 160, 1),
           borderRadius: BorderRadius.circular(8),
         ),
@@ -58,7 +58,7 @@ class _RoundedWithShadowState extends State<RoundedWithShadow> {
       defaultPinTheme: defaultPinTheme,
       separatorBuilder: (index) => const SizedBox(width: 16),
       focusedPinTheme: defaultPinTheme.copyWith(
-        decoration: BoxDecoration(
+        decoration: ShapeDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(8),
           boxShadow: const [

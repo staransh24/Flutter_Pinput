@@ -30,13 +30,13 @@ class _FilledState extends State<Filled> {
       height: 64,
       textStyle: GoogleFonts.poppins(fontSize: 20, color: Colors.white),
       decoration:
-          const BoxDecoration(color: Color.fromRGBO(159, 132, 193, 0.8)),
+          const ShapeDecoration(color: Color.fromRGBO(159, 132, 193, 0.8)),
     );
 
     return Container(
       width: 243,
       clipBehavior: Clip.antiAlias,
-      decoration: BoxDecoration(
+      decoration: ShapeDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(12),
       ),
@@ -53,7 +53,7 @@ class _FilledState extends State<Filled> {
         showCursor: true,
         focusedPinTheme: defaultPinTheme.copyWith(
           decoration:
-              const BoxDecoration(color: Color.fromRGBO(124, 102, 152, 1)),
+              const ShapeDecoration(color: Color.fromRGBO(124, 102, 152, 1)),
         ),
       ),
     );

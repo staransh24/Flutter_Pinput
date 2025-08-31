@@ -35,22 +35,22 @@ class _PinputBuilderExampleState extends State<PinputBuilderExample> {
                 final dec = () {
                   switch (pinState.type) {
                     case PinItemStateType.disabled:
-                      return BoxDecoration(
+                      return ShapeDecoration(
                         borderRadius: BorderRadius.circular(19),
                         border: Border.all(color: Colors.black),
                       );
                     case PinItemStateType.focused:
-                      return BoxDecoration(
+                      return ShapeDecoration(
                         borderRadius: BorderRadius.circular(19),
                         border: Border.all(color: Colors.greenAccent),
                       );
                     case PinItemStateType.error:
-                      return BoxDecoration(
+                      return ShapeDecoration(
                         borderRadius: BorderRadius.circular(19),
                         border: Border.all(color: Colors.redAccent),
                       );
                     default:
-                      return BoxDecoration(
+                      return ShapeDecoration(
                         borderRadius: BorderRadius.circular(19),
                         border: Border.all(color: Colors.black),
                       );

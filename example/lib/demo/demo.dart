@@ -32,7 +32,7 @@ class _AppViewState extends State<AppView> {
           theme: ThemeData(
             tabBarTheme: TabBarTheme(
               indicatorSize: TabBarIndicatorSize.label,
-              indicator: const BoxDecoration(
+              indicator: const ShapeDecoration(
                 border: Border(
                   bottom: BorderSide(
                     color: Color.fromRGBO(30, 60, 87, 1),
@@ -77,11 +77,11 @@ class _AppViewState extends State<AppView> {
                     height: min(1100, constraints.maxHeight.abs()),
                     margin: const EdgeInsets.all(20),
                     clipBehavior: Clip.antiAlias,
-                    foregroundDecoration: BoxDecoration(
+                    foregroundDecoration: ShapeDecoration(
                       borderRadius: BorderRadius.circular(24),
                       border: Border.all(color: Colors.black, width: 15),
                     ),
-                    decoration: BoxDecoration(
+                    decoration: ShapeDecoration(
                       border: Border.all(color: Colors.black, width: 15),
                       borderRadius: BorderRadius.circular(20),
                     ),

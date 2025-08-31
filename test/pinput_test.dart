@@ -17,7 +17,7 @@ void main() {
   testWidgets('Should properly handle states', (WidgetTester tester) async {
     const length = 4;
     final focusNode = FocusNode();
-    const defaultTheme = PinTheme(decoration: BoxDecoration(color: Colors.red));
+    const defaultTheme = PinTheme(decoration: ShapeDecoration(color: Colors.red));
     final focusedTheme = defaultTheme.copyDecorationWith(
       color: Colors.greenAccent.withValues(alpha: .9),
     );
@@ -97,7 +97,7 @@ void main() {
   testWidgets('Should properly handle focused state',
       (WidgetTester tester) async {
     final focusNode = FocusNode();
-    const defaultTheme = PinTheme(decoration: BoxDecoration());
+    const defaultTheme = PinTheme(decoration: ShapeDecoration());
     final focusedTheme = defaultTheme.copyDecorationWith(color: Colors.red);
     await tester.pumpApp(
       Pinput(

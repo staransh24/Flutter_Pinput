@@ -38,7 +38,7 @@ class _FilledRoundedPinPutState extends State<FilledRoundedPinPut> {
         fontSize: 22,
         color: const Color.fromRGBO(30, 60, 87, 1),
       ),
-      decoration: BoxDecoration(
+      decoration: ShapeDecoration(
         color: fillColor,
         borderRadius: BorderRadius.circular(8),
         border: Border.all(color: Colors.transparent),
@@ -63,7 +63,7 @@ class _FilledRoundedPinPutState extends State<FilledRoundedPinPut> {
           ),
         ),
         errorPinTheme: defaultPinTheme.copyWith(
-          decoration: BoxDecoration(
+          decoration: ShapeDecoration(
             color: errorColor,
             borderRadius: BorderRadius.circular(8),
           ),

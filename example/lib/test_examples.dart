@@ -86,7 +86,7 @@ class HeightExample extends StatelessWidget {
         color: Color.fromRGBO(30, 60, 87, 1),
         fontWeight: FontWeight.bold,
       ),
-      decoration: BoxDecoration(
+      decoration: ShapeDecoration(
         borderRadius: BorderRadius.circular(5.0),
         color: Colors.black,
       ),
@@ -96,19 +96,19 @@ class HeightExample extends StatelessWidget {
       length: 6,
       defaultPinTheme: defaultPinTheme,
       focusedPinTheme: defaultPinTheme.copyWith(
-        decoration: BoxDecoration(
+        decoration: ShapeDecoration(
           borderRadius: BorderRadius.circular(5.0),
           color: Colors.red,
         ),
       ),
       submittedPinTheme: defaultPinTheme.copyWith(
-        decoration: BoxDecoration(
+        decoration: ShapeDecoration(
           borderRadius: BorderRadius.circular(5.0),
           color: Colors.green,
         ),
       ),
       followingPinTheme: defaultPinTheme.copyWith(
-        decoration: BoxDecoration(
+        decoration: ShapeDecoration(
           borderRadius: BorderRadius.circular(5.0),
           color: Colors.blue,
         ),

@@ -34,7 +34,7 @@ class _OnlyBottomCursorState extends State<OnlyBottomCursor> {
         fontSize: 22,
         color: const Color.fromRGBO(30, 60, 87, 1),
       ),
-      decoration: const BoxDecoration(),
+      decoration: const ShapeDecoration(),
     );
 
     final cursor = Column(
@@ -43,7 +43,7 @@ class _OnlyBottomCursorState extends State<OnlyBottomCursor> {
         Container(
           width: 56,
           height: 3,
-          decoration: BoxDecoration(
+          decoration: ShapeDecoration(
             color: borderColor,
             borderRadius: BorderRadius.circular(8),
           ),
@@ -56,7 +56,7 @@ class _OnlyBottomCursorState extends State<OnlyBottomCursor> {
         Container(
           width: 56,
           height: 3,
-          decoration: BoxDecoration(
+          decoration: ShapeDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.circular(8),
           ),

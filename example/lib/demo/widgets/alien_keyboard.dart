@@ -105,7 +105,7 @@ class CircularButton extends StatelessWidget {
       child: Ink(
         width: size,
         height: size,
-        decoration: const BoxDecoration(
+        decoration: const ShapeDecoration(
           shape: BoxShape.circle,
           color: Color.fromRGBO(37, 61, 84, 1),
         ),

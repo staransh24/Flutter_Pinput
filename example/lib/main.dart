@@ -86,7 +86,7 @@ class _PinputExampleState extends State<PinputExample> {
         fontSize: 22,
         color: Color.fromRGBO(30, 60, 87, 1),
       ),
-      decoration: BoxDecoration(
+      decoration: ShapeDecoration(
         borderRadius: BorderRadius.circular(19),
         border: Border.all(color: borderColor),
       ),

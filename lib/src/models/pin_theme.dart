@@ -44,7 +44,7 @@ class PinTheme {
   ///  this.shape = BoxShape.rectangle,
   ///  ```
   /// The decoration of each [Pinput] submitted field
-  final BoxDecoration? decoration;
+  final ShapeDecoration? decoration;
 
   /// Theme of the individual pin items for following states:
   /// default, focused pin, submitted pin, following pin, disabled pin and error pin
@@ -77,7 +77,7 @@ class PinTheme {
     double? height,
     TextStyle? textStyle,
     BoxConstraints? constraints,
-    BoxDecoration? decoration,
+    ShapeDecoration? decoration,
     EdgeInsetsGeometry? padding,
     EdgeInsetsGeometry? margin,
   }) {
